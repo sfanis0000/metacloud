@@ -1,0 +1,53 @@
+<html>
+<title>Droozle - VNF Metadata Service API</title>
+<body>
+<head>
+<style>
+body{
+
+font-family:Verdana, Geneva, sans-serif;
+font-size:16px;
+
+ }
+</style>
+</head>
+<img src='logo_droozle.png'>
+
+<h2>VNF Metadata Service API</h2>
+<object>Droozle is a REST API that enables storing of metadata information regarding a VNF (virtual network function) deployed in Openstack/VMware.</object><br><br>
+The main URL for sending REST requests is:
+
+<a href='http://droozle.herokuapp.com/vnf_meta'>http://droozle.herokuapp.com/vnf_meta</a><BR><br>
+
+Through Droozle you are able to create new REST entries, update existing ones or even delete old items.<br><br>
+
+<b style='font-size:18px;'>Examples of Usage:</b><br><Br>
+
+1. <object style='text-decoration:underline;'>Open a browser and check the following IP</object>:
+
+<a href='http://droozle.herokuapp.com/vnf_meta'>http://droozle.herokuapp.com/vnf_meta</a><br><br>
+It contains all the stored entries so far.<br><br>
+
+Alternatively you can use cURL:<br><Br>
+curl -X GET -H "Content-type: application/json" -H "Accept: application/json" http://droozle.herokuapp.com/vnf_meta<br><br>
+
+<img src='screenshot_json.png'><br><br>
+
+2. <object style='text-decoration:underline;'>Add new metadata entries</object>:<br><br>
+
+<a>http://droozle.herokuapp.com/vnf_meta/create?vnf_name=droozle&vnfd_id=4.0&application_version=4.0&vnf_package_name=droozle&vnf_description=VNF+with+4+instances</a><br>
+
+<a>http://droozle.herokuapp.com/vnf_meta/create?vnf_name=peroVNF&vnfd_id=3.0&application_version=3.0&vnf_package_name=peroVNF&vnf_description=VNF+with+2+instances</a><br><br>
+
+3. <object style='text-decoration:underline;'>Update existing entries</object>:<br><br>
+
+<a>http://droozle.herokuapp.com/vnf_meta/update/2?vnf_name=peroVNF</a><br><br>
+
+4. <object style='text-decoration:underline;'>Delete metadata entry</object>:<br><br>
+
+<a>http://droozle.herokuapp.com/vnf_meta/destroy/3<br><br>
+
+Droozle was developed by Fanis Siampos and makes use of Sails.JS and NPM/Node
+
+</body>
+</html>
